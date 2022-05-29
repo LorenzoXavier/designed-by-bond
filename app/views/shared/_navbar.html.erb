@@ -1,0 +1,31 @@
+<!-- ?navbar for screens wider than 770px -->
+<div class="nav-wrapper">
+  <div class="nav-container d-none d-lg-block">
+    <nav>
+      <a href="https://www.weigheasy.com/">
+        <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644102358/Weigh_easy_logo_no_ring_blue_bbijgk.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
+      </a>
+          <ul>
+            <% unless user_signed_in? %>
+              <li><%= link_to "Login", new_user_session_path%></li>
+              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+              <% else %>
+              <!-- </%= link_to "ADMIN", admin_path, id: "admin_tag", class: "brand" if current_user.admin? %> -->
+              <li> link_to "Calender", tasks_path%></li>
+              <div class="avatar-container">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <!-- </%= image_tag current_user.avatar_thumbnail, class: "avatar", alt: "avatar" %> -->
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <!-- <li><a></%= link_to "Profile", profile_path, class: "dropdown-item" %></a></li> -->
+                    <li><a><%= link_to "Edit", edit_user_registration_path, class: "dropdown-item" %></a></li>
+                    <li><a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></a></li>
+                  </ul>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+      </nav>
+  </div>
+</div>

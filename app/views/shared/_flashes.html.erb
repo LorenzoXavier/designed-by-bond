@@ -1,0 +1,56 @@
+<% if !flash[:notice].blank? %>
+  <div>
+    <% flash.each do |type, msg| %>
+
+      <div class="alert alert-info alert-dismissible fade show responsive-flash-padding" role="alert">
+        <%= msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  </div>
+<% elsif !flash[:error].blank? %>
+   <div>
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-danger alert-dismissible fade show responsive-flash-padding" role="alert">
+          <%= msg %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+   </div>
+<% elsif !flash[:warning].blank? %>
+  <div>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-warning alert-dismissible fade show responsive-flash-padding" role="alert">
+        <%= msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  </div>
+<% else !flash[:info].blank? %>
+  <div>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-primary alert-dismissible fade show responsive-flash-padding" role="alert">
+        <%= msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<style>
+  <% if current_page?(root_path) || current_page?(profile_path) %>
+    @media screen and (max-width: 992px){
+      .responsive-flash-padding {
+        height: 80px;
+        margin-left: 80px;
+      }
+    }
+  <% else %>
+    @media screen and (max-width: 992px){
+      .responsive-flash-padding {
+        height: 80px;
+        margin-left: 80px;
+        margin-top: -80px;
+      }
+    }
+  <% end %>
+</style>
