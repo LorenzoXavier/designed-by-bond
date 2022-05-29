@@ -1,0 +1,46 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Items</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Review rating</th>
+        <th>Review count</th>
+        <th>Brand</th>
+        <th>Product code</th>
+        <th>Availability</th>
+        <th>Quantity available</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.title %></td>
+          <td><%= item.price %></td>
+          <td><%= item.review_rating %></td>
+          <td><%= item.review_count %></td>
+          <td><%= item.brand %></td>
+          <td><%= item.product_code %></td>
+          <td><%= item.availability %></td>
+          <td><%= item.quantity_available %></td>
+          <td><%= item.description %></td>
+          <td><%= link_to 'Show', item %></td>
+          <td><%= link_to 'Edit', edit_item_path(item) %></td>
+          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Item', new_item_path %>
+
+</div>

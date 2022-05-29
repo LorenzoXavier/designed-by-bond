@@ -13,7 +13,13 @@
   <body>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <% if current_page?(root_path) %>
+      <%= yield %>
+    <% else %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>
     <%= render "shared/footer" %>
   </body>
 </html>
