@@ -1,21 +1,113 @@
+<div class="columns">
+  <div class="column is-8 is-centered">
 
-<%= simple_form_for(@item) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for @item, html: { multipart: true } do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :price %>
-    <%= f.input :review_rating %>
+        <div class="columns">
+
+          <div class="field column is-9">
+            <div class="control">
+              <%= f.input :title , required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+          <div class="field column">
+            <div class="control">
+              <%= f.input :price, required: true, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+        <%= f.input :review_rating %>
     <%= f.input :review_count %>
-    <%= f.input :brand %>
     <%= f.input :product_code %>
     <%= f.input :availability %>
     <%= f.input :quantity_available %>
-    <%= f.input :description %>
+
+
+
+        <div class="field">
+          <div class="control">
+            <%= f.input :description, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">Brand</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :brand, collection: Item::BRAND, prompt: "Select brand" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+
+
+
+        <div class="field">
+          <div class="control">
+            <label class="label">Add images</label>
+              <div class="file">
+              <label class="file-label">
+                <%= f.input :image, as: :file, input_html: { class:"file-input item-image" }, label: false, wrapper: false %>
+                  <span class="file-cta">
+                    <span class="file-icon"><i class="fa fa-upload"></i></span>
+                    <span class="file-label">Choose a file…</span>
+                  </span>
+              </label>
+              </div>
+            </div>
+          </div>
+          <output id="list"></output>
+        <hr />
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= f.button :submit, class: 'button is-warning' %>
+            <%= link_to 'Cancel', items_path, class:'button is-light' %>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+</%= simple_form_for(@item) do |f| %>
+  </%= f.error_notification %>
+  </%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    </%= f.input :title %>
+    </%= f.input :price %>
+    </%= f.input :review_rating %>
+    </%= f.input :review_count %>
+    </%= f.input :brand %>
+    </%= f.input :product_code %>
+    </%= f.input :availability %>
+    </%= f.input :quantity_available %>
+    </%= f.input :description %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    </%= f.button :submit %>
   </div>
-<% end %>
+</% end %> -->
