@@ -1,69 +1,69 @@
-<% content_for :body_class, 'bg-light' %>
-
-<!-- </% content_for :body_class, 'bg-light' %> -->
-<section class="section item-show">
-  <div class="columns">
-    <div class="column is-8">
-      <h1 class="title is-2"><%= @item.title %></h1>
-      <ul class="pv1">
-        <!-- <li class="inline-block pr3"><%= @item.price %></li>
-        <li class="inline-block pr3"><%= @item.brand %></li> -->
-        <li class="inline-block pr12">Code: <%= @item.product_code %></li>
-      </ul>
-      <ul>
-        <li class="inline-block pr12">Review rating: <%= @item.review_rating %></li>
-      </ul>
-      <ul>
-        <li class="inline-block pr12">Review count: <%= @item.review_count %></li>
-      </ul>
-      <div class="feature-image">
-        <%= image_tag(@item.image_url(:default)) %>
+<% content_for :body_class, 'bg-grey' %>
+<div class="show_page">
+  <section class="section item-show">
+    <div class="columns">
+      <div class="column is-8">
+        <h1 class="title is-2"><%= @item.title %></h1>
+        <ul class="pv1">
+          <!-- <li class="inline-block pr3"><%= @item.price %></li>
+          <li class="inline-block pr3"><%= @item.brand %></li> -->
+          <li class="inline-block pr12">Code: <%= @item.product_code %></li>
+        </ul>
+        <ul>
+          <li class="inline-block pr12">Review rating: <%= @item.review_rating %></li>
+        </ul>
+        <ul>
+          <li class="inline-block pr12">Review count: <%= @item.review_count %></li>
+        </ul>
+        <div class="feature-image">
+          <%= image_tag(@item.image_url(:default)) %>
+        </div>
+        <div class="content pa4 mt3 bg-white border-radius-3">
+        <h3 class="subtitle is-4">Description</h3>
+        <%= @item.description %>
+        <h3 class="subtitle is-4 pt5">Product Specs</h3>
+        <table class="table is-narrow">
+          <% if @item.product_code %>
+          <tr>
+            <td class="has-text-weight-bold">Product code:</td>
+            <td><%= @item.product_code %></td>
+          </tr>
+          <% end %>
+          <% if @item.availability %>
+            <tr>
+              <td class="has-text-weight-bold">Availability:</td>
+              <td><%= product_availability(@item) %></td>
+            </tr>
+          <% end %>
+          <% if @item.availability != "0" %>
+            <tr>
+              <td class="has-text-weight-bold">Amount in stock:</td>
+              <td><%= @item.quantity_available %></td>
+            </tr>
+          <% end %>
+          <% if @item.price %>
+            <tr>
+              <td class="has-text-weight-bold">Price:</td>
+              <td><%= number_to_currency(@item.price) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td class="has-text-weight-bold">Brand:</td>
+            <td><%= @item.brand %></td>
+          </tr>
+        </table>
       </div>
-      <div class="content pa4 mt3 bg-white border-radius-3">
-      <h3 class="subtitle is-4">Description</h3>
-      <%= @item.description %>
-      <h3 class="subtitle is-4 pt5">Product Specs</h3>
-      <table class="table is-narrow">
-        <% if @item.product_code %>
-        <tr>
-          <td class="has-text-weight-bold">Product code:</td>
-          <td><%= @item.product_code %></td>
-        </tr>
-        <% end %>
-        <% if @item.availability %>
-          <tr>
-            <td class="has-text-weight-bold">Availability:</td>
-            <td><%= product_availability(@item) %></td>
-          </tr>
-        <% end %>
-        <% if @item.availability != "0" %>
-          <tr>
-            <td class="has-text-weight-bold">Amount in stock:</td>
-            <td><%= @item.quantity_available %></td>
-          </tr>
-        <% end %>
-        <% if @item.price %>
-          <tr>
-            <td class="has-text-weight-bold">Price:</td>
-            <td><%= number_to_currency(@item.price) %></td>
-          </tr>
-        <% end %>
-        <tr>
-          <td class="has-text-weight-bold">Brand:</td>
-          <td><%= @item.brand %></td>
-        </tr>
-      </table>
-    </div>
-    </div>
-    <div class="column is-3 is-offset-1">
-      <div class="bg-white pa4 border-radius-3">
-        <h4 class="title is-5 has-text-centered"><%= number_to_currency(@item.price) %></h4>
-        <p class="has-text-centered mb4">Sold by <%= @item.user.first_name %> <%= @item.user.last_name %></p>
-        <!-- </%= button_to 'Add to cart', line_items_path(item_id: @item), class: 'button is-warning add-to-cart' %> -->
+      </div>
+      <div class="column is-3 is-offset-1">
+        <div class="bg-white pa4 border-radius-3">
+          <h4 class="title is-5 has-text-centered"><%= number_to_currency(@item.price) %></h4>
+          <p class="has-text-centered mb4">Sold by <%= @item.user.first_name %> <%= @item.user.last_name %></p>
+          <!-- </%= button_to 'Add to cart', line_items_path(item_id: @item), class: 'button is-warning add-to-cart' %> -->
+        </div>
       </div>
     </div>
-  </div>
-  <% if allowed_to_edit(@item) %>
-    <%= link_to 'Edit', edit_item_path(@item), class: 'button' %>
-  <% end %>
-</section>
+    <% if allowed_to_edit(@item) %>
+      <%= link_to 'Edit', edit_item_path(@item), class: 'button' %>
+    <% end %>
+  </section>
+</div>
