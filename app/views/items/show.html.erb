@@ -58,7 +58,7 @@
         <div class="bg-white pa4 border-radius-3">
           <h4 class="title is-5 has-text-centered"><%= number_to_currency(@item.price) %></h4>
           <p class="has-text-centered mb4">Sold by <%= @item.user.first_name %> <%= @item.user.last_name %></p>
-          <!-- </%= button_to 'Add to cart', line_items_path(item_id: @item), class: 'button is-warning add-to-cart' %> -->
+          <%= button_to 'Add to cart', line_items_path(item_id: @item), class: 'button is-warning add-to-cart', style: "width: 100%;" %>
         </div>
       </div>
     </div>

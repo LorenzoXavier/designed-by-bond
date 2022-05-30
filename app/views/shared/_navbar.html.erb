@@ -6,6 +6,16 @@
         <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644102358/Weigh_easy_logo_no_ring_blue_bbijgk.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
       </a>
           <ul>
+            <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+                </span>
+              <% end %>
+            <% end %>
             <% unless user_signed_in? %>
               <li><%= link_to "Login", new_user_session_path%></li>
               <li><%= link_to "Sign Up", new_user_registration_path%></li>

@@ -1,10 +1,9 @@
 
 class Item < ApplicationRecord
-  # require "image_processing/mini_magick"
   mount_uploader :image, ProductImageUploader
-  # serialize :image, JSON
-  # mount_uploader :image, ImageUploader
 
+  before_destroy :not_referenced_by_any_line_item
+  has_many :line_items
   belongs_to :user, optional: true
 
   validates :title, :price, :brand, :product_code, :quantity_available, :description, presence: true
@@ -14,6 +13,13 @@ class Item < ApplicationRecord
 
   BRAND = %w{ Yanma Mercury }
   AVAILABILITY = %w{ Available Unavailable }
+
+  def not_refereced_by_any_line_item
+    unless line_items.empty?
+      errors.add(:base, "Line items present")
+      throw :abort
+    end
+  end
 
 end
 
