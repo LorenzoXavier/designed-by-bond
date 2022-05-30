@@ -1,6 +1,7 @@
 module ItemsHelper
   def allowed_to_edit(item)
-    user_signed_in? && current_user.id == item.user_id || current_user.admin?
+    user_signed_in? && current_user.id == item.user_id
+    # || current_user.admin?
   end
 
   def product_availability(item)

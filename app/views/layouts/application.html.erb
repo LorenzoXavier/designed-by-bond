@@ -15,7 +15,10 @@
     <%= render "shared/navbar" %>
 
     <% if current_page?(root_path) %>
-      <%= yield %>
+    <%= render "shared/banner_homepage" %>
+      <div class="container">
+        <%= yield %>
+      </div>
     <% else %>
       <div class="container">
         <%= yield %>

@@ -1,0 +1,480 @@
+<div class="home-page">
+  <div id="main-banner" class="darken-overlay">
+    <div class="darken-overlay">
+      <div class="main-banner-container">
+        <div class="wrapper" style="width: 100%;">
+          <div class="wrapper-h1" >
+            <h1 style="color: white;">Yanma. <br>Mercury. <br>Bay Area.</h1>
+          </div>
+          <div class="wrapper-button">
+            <% unless user_signed_in? %>
+              <br><br>
+              <div id="button-to-subscription">
+                <!-- <button onclick= "smoothScroll(document.getElementById('subsriptions'))" style="background: transparent; border: none;" > -->
+                  <%= link_to "Search", "", :class => "btn btn-medium"%>
+                </button>
+              </div>
+              <br><br>
+            <% else %>
+              <br><br>
+              <%= link_to "Search", "", :class => "btn btn-medium"%>
+              <br><br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  // Specific CSS for your home-page
+  $red: #F68787;
+  $orange: #F8A978;
+  $yellow: #F1EB9A;
+  $green: #A4F6A5;
+  .main-container{
+    width: 100%;
+    // height: calc(100vh - 120px);
+    margin-bottom: 50px;
+  }
+
+  .padded-container{
+    // width: 100px;
+    margin-top: 50px;
+  }
+
+  .wrapper-h1 {
+    margin-left: 10vh;
+    height: 66.6%;
+    h1 {
+      letter-spacing: 2px;
+      font-size: 1.5rem;
+
+    }
+  }
+
+  .wrapper-button {
+    height: 33.3%;
+    text-align: center;
+    .btn:hover {
+      color: #4da8da;
+    }
+  }
+
+  #main-banner {
+    background:url("https://res.cloudinary.com/weigheasy/image/upload/v1653948672/welding_veaada.jpg");
+    width: 100%;
+    height: 60vh;
+    // margin-left: -270px;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+  }
+
+  .darken-overlay {
+    width: 100%;
+    height: 100%;
+    // min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.30);
+  }
+
+  .wrapper .btn-medium{
+    // padding-left: 33px;
+    font-family: "Roboto Cn", sans-serif;
+    font-size: 3vmin;
+    /* opacity: 1; */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 19px;
+    font-weight: bolder;
+
+    border: 1px solid;
+  }
+
+  .main-banner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+    // text-align: center;
+    // position: relative;
+    h1 {
+      color: white;
+      font-size: 5vmin;
+    }
+    p {
+      color: white;
+    }
+  }
+
+  #banner-typed-text {
+    color: white;
+    font-size: 36px;
+    font-family: "Raleway", "sans-serif";
+  }
+
+  .overview-icon {
+    font-size: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+
+  .home-font {
+    font-size: 24px;
+  }
+
+  .home-top {
+    margin: 50px;
+  }
+
+
+  .home-bottom {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+  }
+
+  .why-us {
+    width: 100%;
+    text-align: center;
+    height: 20%;
+    margin-top: 10px;
+    hr {
+      width: 60%;
+      margin: auto;
+      margin-top: 5px;
+    }
+  }
+
+
+  :root {
+    --surface-color: #fff;
+    --curve: 40;
+  }
+
+  // * {
+  //   box-sizing: border-box;
+  // }
+
+  body {
+    // font-family: 'Noto Sans JP', sans-serif;
+    background-color: none!important;
+  }
+
+
+
+  .video-section {
+    position: relative;
+    width: 75%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .video-section h1 {
+    text-align: center;
+    font-size: 6rem;
+    font-family: "Roboto Cn", sans-serif;
+    padding: 20px;
+    margin: 15px;
+    z-index: 1;
+    opacity: 0.7;
+    color: #effbfb;
+  }
+
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lightblue;
+    width: 100%;
+    height: 80vh;
+    opacity: 0.5;
+  }
+
+
+  #carousel-one {
+    background:url(image_path('home.jpg'));
+    width: 100%;
+    height: 100vh;
+    // margin-left: -270px;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+  }
+
+  #carousel-two {
+    background:url(image_path('home-two.jpg'));
+    width: 100%;
+    height: 100vh;
+    // margin-left: -270px;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+  }
+
+  #carousel-three {
+    background:url(image_path('home-three.jpg'));
+    width: 100%;
+    height: 100vh;
+    // margin-left: -270px;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+  }
+
+  .heading {
+      text-align: center;
+      color: #454343;
+      font-size: 30px;
+      font-weight: 700;
+      position: relative;
+      margin-bottom: 70px;
+      text-transform: uppercase;
+      z-index: 999;
+  }
+  .white-heading{
+      color: #ffffff;
+  }
+  .heading:after {
+      content: ' ';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      height: 40px;
+      width: 180px;
+      border-radius: 4px;
+      transform: translateX(-50%);
+      background: url(img/heading-line.png);
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  .white-heading:after {
+      background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  .heading span {
+      font-size: 18px;
+      display: block;
+      font-weight: 500;
+  }
+  .white-heading span {
+      color: #ffffff;
+  }
+  /*-----Testimonial-------*/
+
+  .testimonial:after {
+      position: absolute;
+      top: -0 !important;
+      left: 0;
+      content: " ";
+      background:url(image_path('testomonial.jpg'));
+      background-size: 100% 100px;
+      width: 100%;
+      height: 100px;
+      float: left;
+      z-index: 99;
+  }
+
+  .testimonial {
+      min-height: 600px;
+      position: relative;
+      // background-image: linear-gradient(to right, red , blue);
+
+
+      background:url(image_path('testomonial.jpg'));
+      padding-top: 50px;
+      padding-bottom: 50px;
+      background-position: center;
+          background-size: cover;
+
+  }
+
+  #testimonial4 .carousel-inner:hover{
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+  #testimonial4 .carousel-inner:active{
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+  #testimonial4 .carousel-inner .item{
+    overflow: hidden;
+  }
+
+  .testimonial4_indicators .carousel-indicators{
+    left: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+    height: 20px;
+    bottom: 15px;
+    padding: 0 5px;
+    cursor: e-resize;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .testimonial4_indicators .carousel-indicators li{
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    text-indent: 0;
+    margin: 2px 3px;
+    cursor: pointer;
+    display: inline-block;
+    background: #ffffff;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+  .testimonial4_indicators .carousel-indicators .active{
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    margin: 2px 3px;
+    background-color: #9dd3af;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+  .testimonial4_indicators .carousel-indicators::-webkit-scrollbar{
+    height: 3px;
+  }
+  .testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb{
+    background: #eeeeee;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+
+  .testimonial4_control_button .carousel-control{
+    top: 175px;
+    opacity: 1;
+    width: 40px;
+    bottom: auto;
+    height: 40px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 38px;
+    text-shadow: none;
+    text-align: center;
+    position: absolute;
+    background: transparent;
+    border: 2px solid #ffffff;
+    text-transform: uppercase;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    // -webkit-transition: all 0.6s cubic-bezier(0.3,1,0,1);
+    // transition: all 0.6s cubic-bezier(0.3,1,0,1);
+  }
+  .testimonial4_control_button .carousel-control.left{
+    left: 7%;
+    top: 50%;
+    right: auto;
+  }
+  .testimonial4_control_button .carousel-control.right{
+    right: 7%;
+    top: 50%;
+    left: auto;
+  }
+  .testimonial4_control_button .carousel-control.left:hover,
+  .testimonial4_control_button .carousel-control.right:hover{
+    color: #000;
+    background: #fff;
+    border: 2px solid #fff;
+  }
+
+  .testimonial4_header{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 550px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+  }
+  .testimonial4_header h4{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .testimonial4_slide{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+  }
+  .testimonial4_slide img {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 136px;
+      height: 136px;
+      margin: auto;
+      display: block;
+      color: #f2f2f2;
+      font-size: 18px;
+      line-height: 46px;
+      text-align: center;
+      position: relative;
+      border-radius: 50%;
+      box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+      -moz-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+      -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+      -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  .testimonial4_slide p {
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 40px 0 20px 0;
+  }
+  .testimonial4_slide h4 {
+    color: #ffffff;
+    font-size: 22px;
+  }
+
+  .testimonial .carousel {
+    padding-bottom:50px;
+  }
+
+  /* ------testimonial  close-------*/
+  //
+
+
+
+
+
+
+
+</style>
