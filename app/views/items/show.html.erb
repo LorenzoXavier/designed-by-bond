@@ -30,15 +30,21 @@
   <%= @item.product_code %>
 </p>
 
-<p>
-  <strong>Availability:</strong>
-  <%= @item.availability %>
-</p>
-
-<p>
-  <strong>Quantity available:</strong>
-  <%= @item.quantity_available %>
-</p>
+<% if @item.quantity_available == "0" %>
+  <p>
+    <strong>Availability:</strong>
+    <%= @item.availability = "No stock" %>
+  </p>
+  <% else %>
+  <p>
+    <strong>Availability:</strong>
+    <%= @item.availability = "In stock" %>
+  </p>
+  <p>
+    <strong>Quantity available:</strong>
+    <%= @item.quantity_available %>
+  </p>
+<% end %>
 
 <p>
   <strong>Description:</strong>

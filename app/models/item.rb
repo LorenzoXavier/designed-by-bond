@@ -13,6 +13,7 @@ class Item < ApplicationRecord
   validates :price, length: { maximum: 7 }
 
   BRAND = %w{ Yanma Mercury }
+  AVAILABILITY = %w{ Available Unavailable }
 
 end
 

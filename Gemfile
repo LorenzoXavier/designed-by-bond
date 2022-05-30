@@ -12,6 +12,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 # font awesome
 gem "font-awesome-rails"
+# binding pry
+gem 'pry', '~> 0.14.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
