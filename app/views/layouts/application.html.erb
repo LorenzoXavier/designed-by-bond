@@ -10,9 +10,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= yield (:body_class) %>">
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
+
     <% if current_page?(root_path) %>
       <%= yield %>
     <% else %>
