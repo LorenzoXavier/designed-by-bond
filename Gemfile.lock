@@ -118,7 +118,23 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.10.0)
     eventmachine (1.2.7)
+    excon (0.92.3)
     ffi (1.15.5)
+    fog-aws (3.14.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.3.0)
+      builder
+      excon (~> 0.71)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.4)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
     formatador (1.1.0)
@@ -162,6 +178,9 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
@@ -305,6 +324,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  fog-aws
   font-awesome-rails
   gravatar_image_tag
   guard
