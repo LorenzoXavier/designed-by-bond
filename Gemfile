@@ -15,7 +15,7 @@ gem "font-awesome-rails"
 # binding pry
 gem 'pry', '~> 0.14.1'
 # amazon web services
-gem 'aws-sdk-s3', require: false
+# gem 'aws-sdk-s3', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
