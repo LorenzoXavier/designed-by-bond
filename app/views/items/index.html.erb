@@ -1,4 +1,6 @@
-<%= link_to 'New Item', new_item_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Item', new_item_path %>
+<% end %>
 
 <div class="item-index-grid pt4">
   <% @items.each do |item| %>
