@@ -29,7 +29,7 @@ puts "You're in the seeding file"
     quantity_available: Random.rand(1...1000),
     description: Faker::Lorem.paragraphs(number: 2),
     image: Rails.root.join("app/assets/images/engine.jpg").open,
-    user_id: User.first
+    user_id: User.first.id
   }])
   puts "creating item number #{i + 1}"
 end
