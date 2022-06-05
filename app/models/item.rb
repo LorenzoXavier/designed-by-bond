@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   BRAND = %w{ Yanma Mercury }
   AVAILABILITY = %w{ Available Unavailable }
 
-  def not_refereced_by_any_line_item
+  def not_referenced_by_any_line_item
     unless line_items.empty?
       errors.add(:base, "Line items present")
       throw :abort

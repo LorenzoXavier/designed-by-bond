@@ -7,12 +7,9 @@ class LineItem < ApplicationRecord
   end
 
   def to_builder
-    # binding.pry
-
     @me = Jbuilder.new do |product|
       product.price Item.find(item_id).stripe_price_id
       product.quantity quantity
     end
-    # binding.pry
   end
 end

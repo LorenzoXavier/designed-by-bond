@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+# for seeding fake data
+gem 'faker'
+
 # additional gems for this project
 gem 'bulma-rails'
 gem 'simple_form'
