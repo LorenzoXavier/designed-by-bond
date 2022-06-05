@@ -8,7 +8,8 @@
     </figure>
   </div>
   <div class="column is-9">
-    <strong><%= line_item.item.title %></strong>
+    <strong><%= line_item.item.title %>, Stripe ID: <%= line_item.item.stripe_item_id %></strong>
+
     <div class="columns align-items-center">
       <div class="content column is-9">
         <%= truncate(line_item.item.description, length: 140) %>
