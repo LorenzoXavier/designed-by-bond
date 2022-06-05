@@ -21,18 +21,11 @@ class Item < ApplicationRecord
     end
   end
 
-  # transform shopping cart items into an array of line items
-  def to_builder
-    Jbuilder.new do |item|
-      item.price stripe_price_id
-      item.quantity 1
-    end
-  end
 
   # create stripe item and assign to this item
   after_create do
     item = Stripe::Product.create(name: title)
-    price = Stripe::Price.create(product: item, unit_amount: self.price, currency: self.currency)
+    price = Stripe::Price.create(product: item, unit_amount: self.price * 100, currency: self.currency)
     update(stripe_item_id: item.id, stripe_price_id: price.id)
   end
 
