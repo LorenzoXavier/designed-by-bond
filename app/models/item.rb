@@ -21,34 +21,25 @@ class Item < ApplicationRecord
     end
   end
 
+
+  # create stripe item and assign to this item
+  after_create do
+    item = Stripe::Product.create(name: title)
+    price = Stripe::Price.create(product: item, unit_amount: self.price * 100, currency: self.currency)
+    update(stripe_item_id: item.id, stripe_price_id: price.id)
+  end
+
+  # stripe keeps items and prices separately.
+  # updating local prices would require to update or create stripe prices.
+  # this is all additional complexity.
+  # better just create new items.
+
+  # after_update :create_and_assign_new_stripe_price, if: :saved_change_to_price?
+  # after_update :create_and_assign_new_stripe_price, if: :saved_change_to_currency?
+
+  # def create_and_assign_new_stripe_price
+  #   price = Stripe::Price.create(item: self.stripe_item_id, unit_amount: self.price, currency: self.currency)
+  #   update(stripe_price_id: price.id)
+  # end
+
 end
-
-
-
-# class Instrument < ApplicationRecord
-#   before_destroy :not_referenced_by_any_line_item
-#   belongs_to :user, optional: true
-#   has_many :line_items
-
-#   mount_uploader :image, ImageUploader
-#   serialize :image, JSON # If you use SQLite, add this line
-
-#   validates :title, :brand, :price, :model, presence: true
-#   validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum aloud. "}
-#   validates :title, length: { maximum: 140, too_long: "%{count} characters is the maximum aloud. "}
-#   validates :price, length: { maximum: 7 }
-
-#   BRAND = %w{ Fender Gibson Epiphone ESP Martin Dean Taylor Jackson PRS  Ibanez Charvel Washburn }
-#   FINISH = %w{ Black White Navy Blue Red Clear Satin Yellow Seafoam }
-#   CONDITION = %w{ New Excellent Mint Used Fair Poor }
-
-#   private
-
-#   def not_refereced_by_any_line_item
-#     unless line_items.empty?
-#       errors.add(:base, "Line items present")
-#       throw :abort
-#     end
-#   end
-
-# end
