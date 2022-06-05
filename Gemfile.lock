@@ -119,6 +119,8 @@ GEM
     erubi (1.10.0)
     eventmachine (1.2.7)
     excon (0.92.3)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.5)
     fog-aws (3.14.0)
       fog-core (~> 2.1)
@@ -337,6 +339,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  faker
   fog-aws
   font-awesome-rails
   gravatar_image_tag

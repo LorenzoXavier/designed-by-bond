@@ -5,6 +5,14 @@
 @import "bulma";
 @import "functions";
 
+a {
+  text-decoration: none!important;
+}
+
+.item-index-grid .item {
+  margin: 5px;
+}
+
 .notification {
   border-radius: 0;
 }
@@ -14,6 +22,7 @@
 }
 
 .item-index-grid {
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
