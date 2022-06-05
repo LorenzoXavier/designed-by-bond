@@ -17,6 +17,10 @@ gem 'pry', '~> 0.14.1'
 # amazon web services
 gem 'aws-sdk-s3', require: false
 gem 'fog-aws'
+# payment
+gem "pay", "~> 3.0"
+gem "stripe", "~> 6.0"
+gem "receipts", "~> 2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'

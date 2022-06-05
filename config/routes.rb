@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     registrations: "registrations"
   }
   root 'items#index'
+  get '/checkout', to: 'checkouts#show'
+  get '/billing', to: 'billing#show'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
