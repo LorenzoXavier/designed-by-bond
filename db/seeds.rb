@@ -7,16 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "You're in the seeding file"
 
-# user = User.new(
-#   # id: 2,
-#   first_name: "Lorenzo",
-#   last_name: "Cursley",
-#   email: "drumminloz@hotmail.com",
-#   password: "123456",
-#   password_confirmation: "123456"
-# )
-# puts "User created"
-# user.save!
+user = User.new(
+  first_name: "Lorenzo",
+  last_name: "Cursley",
+  email: "drumminloz@hotmail.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+puts "User created"
+user.save!
 
 12.times do |i|
   Item.create!([{
