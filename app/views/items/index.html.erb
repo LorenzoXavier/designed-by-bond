@@ -3,6 +3,8 @@
 <% end %>
 <!-- render the scrolling cards partial -->
 <%= render "horizontal_scrolling_cards_large" %>
+<!-- for smaller cards elements - use below -->
+<!-- </%= render "horizontal_scrolling_cards_small" %> -->
 <div class="item-index-grid pt4">
   <% @items.each do |item| %>
     <div class="item border-light-color">
@@ -24,8 +26,6 @@
   </div>
   <% end %>
 </div>
-<!-- for smaller cards elements - use below -->
-<!-- </%= render "horizontal_scrolling_cards_small" %> -->
-<style>
-
-</style>
+<div class="pt-3 pb-3">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

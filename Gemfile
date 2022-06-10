@@ -24,6 +24,8 @@ gem 'fog-aws'
 gem "pay", "~> 3.0"
 gem "stripe", "~> 6.0"
 gem "receipts", "~> 2.0"
+# paggination
+gem 'pagy'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
