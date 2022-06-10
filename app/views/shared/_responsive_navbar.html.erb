@@ -1,0 +1,36 @@
+<!-- hamburger icon for devices smaller than 770px wide -->
+<div class="menu-wrap d-lg-none">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <a href="https://www.weigheasy.com/">
+            <img alt="SES" src="https://res.cloudinary.com/weigheasy/image/upload/v1646456078/SES_logo_tfgflv.png" style="width: 100px; height:60px; margin-top: 20px; margin-bottom: 5px;">
+          </a>
+           <br><br>
+            <% unless user_signed_in? %>
+              <li><%= link_to "Login", new_user_session_path%></li>
+              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+            <% else %>
+              <div class="avatar-container">
+                <div class="hamburger-avatar-sizing">
+                 <li>
+                   <%= image_tag "avatar.png", class: "avatar", alt: "avatar" %>
+                   <br><br>
+                 </li>
+                </div>
+              </div>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Items", items_path %></li>
+              <li><%= link_to "Edit user", edit_user_registration_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  -->

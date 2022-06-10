@@ -1,43 +1,45 @@
-  <!-- Site footer -->
+<!-- Site footer -->
+
+<!-- faking forum channels, room to add this feature later -->
+<% forum_channels = ["Seeking advice on engine health", "Winterising a classic car", "How to ensure you order correct parts", "Ensuring your engine lasts as long as possible", "Help - looking for guidance on a new project"]%>
+<!-- faking blogs, room to add this feature later -->
+<% blogs = ["Basic engine servicing at home", "How to safely convert an old petrol engine to be safe using e10 fuel", "Why choosing the right harware is important", "How to take the bottom end off of a classic car safely", "Why choosing the right lubrication is essential for engine health"]%>
+
+
+
+
+
 <footer class="site-footer" >
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-lg-6">
         <h6>About</h6>
-        <p class="text-justify"><i>MAKING YOUR TIME ON THE WATER FUN </i> our objective here at Weigh Easy is to take the stress away from your vessel. Let us organize logistics and do the heavy lifting. We want you to step onto your boat, let the lines go and remember why you bought her in the first place!</p>
+        <p class="text-justify"><i>AN E-COMMERSE SITE BUILT WITH RUBY ON RAILS </i> A web application for purchasing and selling mechanical goods. The app uses Devise to handle users, Stripe for payments, AWS for image storage when creating items and recaptcha for the contact form - using a generic Gmail account to handle the email</p>
       </div>
       <div class="col-xs-6 col-lg-3">
         <h6>Forum channels</h6>
         <ul class="footer-links">
-          <!-- </% Channel.order("created_at DESC").first(5).each do |topic| %> -->
-            <li>link_to "#{topic.channel.truncate_words(4)}", topic</li>
-          <!-- </% end %> -->
-            <li> link_to "All Channels", channels_path %></li>
+          <% forum_channels.map do |thread| %>
+            <li><%= link_to "#{thread.truncate_words(5)}", root_path %></li>
+          <% end %>
           <h6>Latest Blogs</h6>
-          <!-- </% Blog.order("created_at DESC").first(5).each do |blog| %> -->
-            <!-- </% if blog.admin_cleared == true %> -->
-              <li></%= link_to "#{blog.title.truncate_words(4)}", blog %></li>
-            <!-- </% end %> -->
-          <!-- </% end %> -->
-            <li> link_to "Link to all blogs", blogs_path %></li>
+            <% blogs.map do |blog| %>
+              <li><%= link_to "#{blog.truncate_words(5)}", root_path %></li>
+            <% end %>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-3">
         <h6>Quick Links</h6>
         <ul class="footer-links">
           <li><%= link_to "Home Page", root_path %></li>
-          <!-- <li></%= link_to "Contact us", contact_path %></li>
-          <li></%= link_to "About us", about_path %></li>
-          <li></%= link_to "Boat repair", repair_path %></li>
-          <li></%= link_to "Yanmar", yanmar_path %></li>
-          <li></%= link_to "Coverage area", coverage_path %></li>
-          <li></%= link_to "Write a testomonial", new_testomonial_path %></li>
-          <li></%= link_to "View all testomonials", testomonials_path %></li>
-          <li></%= link_to "Privacy Policy", privacy_path %></li>
-          <li></%= link_to "Environmental Policy", environmental_path %></li>
-          <li></%= link_to "Terms of use", terms_of_use_path %></li>
-          <li></%= link_to "Cookie policy", cookies_path %></li> -->
-          <!-- <li><a href="#">Sitemap</a></li> -->
+          <li><%= link_to "Contact us", contact_path %></li>
+          <li><%= link_to "About us", about_us_path %></li>
+          <li><%= link_to "View all testomonials", testomonials_path %></li>
+          <li><%= link_to "Privacy Policy", privacy_path %></li>
+          <li><%= link_to "Environmental Policy", environmental_path %></li>
+          <li><%= link_to "Terms of use", terms_of_use_path %></li>
+          <li><%= link_to "Cookie policy", cookies_path %></li>
+          <li><a href="#">Sitemap</a></li>
         </ul>
       </div>
     </div>
@@ -52,10 +54,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 col-xs-12">
         <ul class="social-icons">
-          <%= mail_to "info@weigheasy.com" do %><i class="fa fa-envelope"></i><% end %>
+          <%= mail_to "weigheasy2022@gmail.com" do %><i class="fa fa-envelope"></i><% end %>
           <li><a class="facebook" href="#"><i class="fa fa-facebook-f"></i></a></li>
           <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a class="whatsapp" href="https://wa.me/0014159365505" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+          <li><a class="whatsapp" href="#" target="blank"><i class="fa fa-whatsapp"></i></a></li>
           <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
       </div>

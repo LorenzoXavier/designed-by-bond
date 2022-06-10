@@ -1,0 +1,69 @@
+<section class="contact-page-section">
+  <div class="container mt-5 mb-5">
+    <div class="inner-container">
+      <div class="row clearfix">
+        <!--Form Column-->
+        <div class="form-column col-lg-8 col-sm-12 col-xs-12">
+         <div class="inner-column">
+               <!--Contact Form-->
+          <div class="contact-form">
+            <%= form_for Contact.new, url: contact_path do |f| %>
+                 <div class="row clearfix">
+                     <div class="form-group col-lg-6 col-sm-6 co-xs-12">
+                      <%= f.text_field :name, placeholder: "name", class: "form-control", required: "true" %>
+                     </div>
+                     <div class="form-group col-lg-6 col-sm-6 co-xs-12">
+                      <%= f.email_field :email, placeholder: "name@email.com", autocomplete: "email", class: "form-control", required: "true" %>
+                     </div>
+                     <div class="form-group col-lg-6 col-sm-6 co-xs-12">
+                      <%= f.text_field :subject, class: "form-control", placeholder: "subject", required: "true" %>
+                     </div>
+                     <div class="form-group col-lg-6 col-sm-6 co-xs-12">
+                      <%= f.text_field :phone, class: "form-control", placeholder: "phone" %>
+                     </div>
+                     <div class="form-group col-lg-12 col-sm-12 co-xs-12">
+                      <%= f.text_area :message, class: "form-control", placeholder: "Write message in here...", required: "true" %>
+                     </div>
+                     <!-- <div class="field mb-3">
+                       </%= flash[:recaptcha_error] %>
+                       </%= recaptcha_tags %>
+                     </div> -->
+                     <div class="form-group col-lg-12 col-sm-12 co-xs-12">
+                      <%= f.submit "Submit", class: "theme-btn btn-style-one" %>
+                     </div>
+                 </div>
+             <% end %>
+          </div>
+          <!--End Contact Form-->
+        </div>
+      </div>
+        <!--Info Column-->
+        <div class="info-column col-lg-4 col-sm-12 col-xs-12">
+         <div class="inner-column text-center">
+          <h2 class="pb-1">Contact Info</h2>
+            <ul class="list-info">
+              <i class="fa fa-globe text-center" style="color:#24388d;font-size:30px;"></i>
+              <li>Ruby on Rails Developer</li>
+              <i class="fa fa-envelope text-center" style="color:#24388d;font-size:30px;"></i>
+              <li>weigheasy2022@gmail.com</li>
+              <li></li>
+              <i class="fa fa-phone text-center pb-2" style="color:#24388d;font-size:30px;"></i><br>
+              <a style="color:#24388d;font-size:18px;" href="tel:00447590745745" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+44 7590 745 745</p></a>
+            </ul>
+            <div class="row">
+              <div class="col-12 text-center">
+                <ul class="social-icons">
+                  <%= mail_to "weigheasy2022@gmail.com" do %><i class="fa fa-envelope"></i><% end %>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook-f"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="whatsapp" href="#" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
