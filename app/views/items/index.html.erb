@@ -2,30 +2,34 @@
   <%= link_to 'New Item', new_item_path %>
 <% end %>
 <!-- render the scrolling cards partial -->
-<%= render "horizontal_scrolling_cards_large" %>
+<% if current_page?(root_path) %>
+  <%= render "horizontal_scrolling_cards_large" %>
+<% end %>
 <!-- for smaller cards elements - use below -->
 <!-- </%= render "horizontal_scrolling_cards_small" %> -->
-<div class="item-index-grid pt4">
-  <% @items.each do |item| %>
-    <div class="item border-light-color">
-      <div class="item-thumb">
-      <%= link_to image_tag(item.image_url(:thumb)), item %>
-        <div class="available">
-          <span class="tag is-dark"><%= product_availability(item) %></span>
+<% if current_page?(items_path) %>
+  <div class="item-index-grid pt4">
+    <% @items.each do |item| %>
+      <div class="item border-light-color">
+        <div class="item-thumb">
+        <%= link_to image_tag(item.image_url(:thumb)), item %>
+          <div class="available">
+            <span class="tag is-dark"><%= product_availability(item) %></span>
+          </div>
         </div>
+      <div class="pa3">
+        <h3 class="fw7 f4 title"><%= link_to item.title, item %></h3>
+        <p class="has-text-gray fg pt1">Sold by <%= item.user.first_name %> <%= item.user.last_name %></p>
+        <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(item.price) %></p>
+        <% if allowed_to_edit(item) %>
+           <%= link_to 'Edit', edit_item_path(item), class: "button is-small" %>
+           <%= link_to 'Delete', item, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+        <% end %>
       </div>
-    <div class="pa3">
-      <h3 class="fw7 f4 title"><%= link_to item.title, item %></h3>
-      <p class="has-text-gray fg pt1">Sold by <%= item.user.first_name %> <%= item.user.last_name %></p>
-      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(item.price) %></p>
-      <% if allowed_to_edit(item) %>
-         <%= link_to 'Edit', edit_item_path(item), class: "button is-small" %>
-         <%= link_to 'Delete', item, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
-      <% end %>
     </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-<div class="pt-3 pb-3">
-  <%== pagy_bootstrap_nav(@pagy) %>
-</div>
+  <div class="pt-3 pb-3">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+<% end %>
