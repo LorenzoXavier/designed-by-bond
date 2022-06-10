@@ -3,8 +3,16 @@
   <%= link_to items_path do %>
     <div class="media-element">
         <img src="https://images.unsplash.com/photo-1534190239940-9ba8944ea261?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" alt="tools">
-        <p class="title">All itmes</p>
+        <p class="title">All items</p>
     </div>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to new_item_path do %>
+      <div class="media-element">
+        <img src="https://images.unsplash.com/photo-1642543348791-b1cc1b07e756?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" alt="Sell">
+        <p class="title">Sell items</p>
+      </div>
+    <% end %>
   <% end %>
   <%= link_to items_path do %>
     <div class="media-element">

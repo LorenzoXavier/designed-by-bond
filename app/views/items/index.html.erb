@@ -1,6 +1,7 @@
-<% if user_signed_in? %>
-  <%= link_to 'New Item', new_item_path %>
-<% end %>
+<!--
+</% if user_signed_in? %>
+  </%= link_to 'New Item', new_item_path %>
+</% end %> -->
 <!-- render the scrolling cards partial -->
 <% if current_page?(root_path) %>
   <%= render "horizontal_scrolling_cards_large" %>
@@ -14,7 +15,7 @@
         <div class="item-thumb">
         <%= link_to image_tag(item.image_url(:thumb)), item %>
           <div class="available">
-            <span class="tag is-dark"><%= product_availability(item) %></span>
+            <span class="tag" style="background-color: #b70705; color: white;"><%= product_availability(item) %></span>
           </div>
         </div>
       <div class="pa3">

@@ -14,30 +14,11 @@ class CartsController < ApplicationController
     current_user.set_payment_processor :stripe
     current_user.payment_processor.customer
 
-    # @checkout_session = current_user.payment_processor.checkout(
-    #   mode: "payment",
-    #   line_items: "price_1L5syGD3EGSDPVxu9jQOcjUW"
-    #   )
-
-    # binding.pry
     @checkout_session = current_user.payment_processor.checkout(
       mode: "payment",
       line_items: @cart.line_items.collect { |item| item.to_builder.attributes! },
-      )
-
-    # @checkout_session = current_user.payment_processor.checkout(
-
-
-    #   mode: "payment",
-    #   line_items: @cart.line_items.collect { |item|
-
-    #   item.price stripe_price_id
-    #   item.quantity item.quantity
-    #    },
-    #    )
+    )
   end
-
-
 
   # GET /carts/new
   def new
