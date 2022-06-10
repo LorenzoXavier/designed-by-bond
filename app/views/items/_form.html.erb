@@ -1,7 +1,5 @@
-
 <div class="columns">
-  <div class="column is-8 is-centered">
-
+  <div class="column is-12 is-centered">
     <%= simple_form_for @item, html: { multipart: true } do |f| %>
       <%= f.error_notification %>
        <div class="columns">
@@ -10,9 +8,7 @@
             <%= f.input :title , required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
           </div>
         </div>
-
       </div>
-
       <div class="columns">
         <div class="field column is-6">
           <div class="control">
@@ -25,22 +21,17 @@
           </div>
         </div>
       </div>
-
-
-
       <div class="field">
         <div class="control">
           <%= f.input :description, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
         </div>
       </div>
       <div class="columns">
-
         <div class="field column is-4">
           <div class="control">
             <%= f.input :quantity_available, required: true, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
           </div>
         </div>
-
         <div class="field column is-4">
           <div class="control">
             <label class="label">Brand</label>
@@ -55,14 +46,9 @@
           </div>
         </div>
       </div>
-
-
-
-
-
       <div class="field">
         <div class="control">
-          <label class="label">Add images</label>
+          <label class="label">Add an image</label>
             <div class="file">
             <label class="file-label">
               <%= f.input :image, as: :file, input_html: { class:"file-input item-image" }, label: false, wrapper: false  %>
@@ -76,18 +62,15 @@
         </div>
         <output id="list"></output>
       <hr />
-
       <div class="field is-grouped">
         <div class="control">
           <%= f.button :submit, class: 'button is-warning', data: { disable_with: "processing..."} %>
           <%= link_to 'Cancel', items_path, class:'button is-light' %>
         </div>
       </div>
-
     <% end %>
+  </div>
 </div>
-</div>
-
 <script>
   document.addEventListener("turbolinks:load", function() {
 
