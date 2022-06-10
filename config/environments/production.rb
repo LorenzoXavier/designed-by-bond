@@ -1,4 +1,23 @@
 Rails.application.configure do
+
+  # For the mail form on landing page
+  config.action_mailer.default_options = { from: 'weigheasy2022@gmail.com'}
+  Rails.application.routes.default_url_options[:host] = 'https://sesmarketplace.herokuapp.com'
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default charset: 'utf-8'
+
+  # config for gmail weigh easy account
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    user_name: Rails.application.credentials.gmail_username,
+    password: Rails.application.credentials.gmail_password
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

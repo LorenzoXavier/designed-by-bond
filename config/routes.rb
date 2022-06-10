@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'items#index'
   get '/checkout', to: 'checkouts#show'
   get '/billing', to: 'billing#show'
+  resources :contact, only: [:create]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
