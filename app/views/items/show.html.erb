@@ -4,17 +4,30 @@
     <div class="columns">
       <div class="column is-8">
         <h1 class="title is-2"><%= @item.title %></h1>
-        <ul class="pv1">
-          <!-- <li class="inline-block pr3"><%= @item.price %></li>
-          <li class="inline-block pr3"><%= @item.brand %></li> -->
-          <li class="inline-block pr12">Code: <%= @item.product_code %></li>
-        </ul>
-        <ul>
-          <li class="inline-block pr12">Review rating: <%= @item.review_rating %></li>
-        </ul>
-        <ul>
-          <li class="inline-block pr12">Review count: <%= @item.review_count %></li>
-        </ul>
+        <div class="row ps-5"><div class="col-2">Product code:</div><div class="col-2"><%= @item.product_code %></div></div>
+        <div class="row ps-5"><div class="col-2">Reviews: </div><div class="col-2"><%= @item.review_count %></div></div>
+        <div class="row ps-5 pb-5">
+          <div class="col-2">Review Rating:</div>
+          <div class="col-2">
+            <div class="star_rating">
+              <div class="stars-outer">
+                <div class="stars-inner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          const ratings = {
+            star_rating : <%= @item.review_rating %>,
+          };
+          // total number of stars
+          const starTotal = 5;
+          for(const rating in ratings) {
+            const starPercentage = (ratings[rating] / starTotal) * 100;
+            const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+            document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+          }
+        </script>
         <div class="feature-image">
           <%= image_tag(@item.image_url(:default)) %>
         </div>
@@ -67,3 +80,4 @@
     <% end %>
   </section>
 </div>
+
