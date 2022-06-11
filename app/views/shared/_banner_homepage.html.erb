@@ -4,20 +4,20 @@
       <div class="main-banner-container">
         <div class="wrapper" style="width: 100%;">
           <div class="wrapper-h1" >
-            <h1 style="color: white;">Yanma. <br>Mercury. <br>Bay Area.</h1>
+            <h1 style="color: white;">Your first choice for parts.<br>Online marketplace,<br>Built on rails</h1>
           </div>
           <div class="wrapper-button">
             <% unless user_signed_in? %>
               <br><br>
               <div id="button-to-subscription">
                 <!-- <button onclick= "smoothScroll(document.getElementById('subsriptions'))" style="background: transparent; border: none;" > -->
-                  <%= link_to "Search", "", :class => "btn btn-medium"%>
+                  <%= link_to "Products", items_path, :class => "btn btn-medium"%>
                 </button>
               </div>
               <br><br>
             <% else %>
               <br><br>
-              <%= link_to "Search", "", :class => "btn btn-medium"%>
+              <%= link_to "Products", items_path, :class => "btn btn-medium"%>
               <br><br>
             <% end %>
           </div>

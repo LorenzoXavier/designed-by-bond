@@ -28,6 +28,8 @@ gem "receipts", "~> 2.0"
 gem 'pagy'
 # mail form on landingpage
 gem 'mail_form'
+# search function
+gem 'meilisearch-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'

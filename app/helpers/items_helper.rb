@@ -5,11 +5,10 @@ module ItemsHelper
   end
 
   def product_availability(item)
-    if item.availability == "0"
+    if item.quantity_available == "0"
       "Not in stock"
     else
       "In Stock"
     end
-
   end
 end
