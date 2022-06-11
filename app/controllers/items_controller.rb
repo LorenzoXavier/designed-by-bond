@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
-  include Pagy::Backend
+
   before_action :set_item, only: %i[ show edit update destroy ]
 
   # GET /items or /items.json
   def index
-    @pagy, @items =pagy(Item.all)
+    # @pagy, @items =pagy(Item.all)
+    # @items = Item.search(params[:query])
+    @items = Item.pagy_search(params[:query])
+    @pagy, @items= pagy_meilisearch(@items, items: 10)
 
     # @items = Item.all.order("created_at desc")
   end
