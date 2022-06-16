@@ -1,8 +1,9 @@
 
 class Item < ApplicationRecord
   mount_uploader :image, ProductImageUploader
-  include MeiliSearch::Rails
-  extend Pagy::Meilisearch
+  # below lines are for meilisearch - which doesn't work in production on heroku
+  # include MeiliSearch::Rails
+  # extend Pagy::Meilisearch
 
   before_destroy :not_referenced_by_any_line_item
   has_many :line_items
@@ -16,31 +17,30 @@ class Item < ApplicationRecord
   BRAND = %w{ Yanma Mercury }
   AVAILABILITY = %w{ Available Unavailable }
 
+  # below lines are for meilisearch - which doesn't work in production on heroku
+  # meilisearch per_environment: true do
+  #   attribute :title
+  #   attribute :price
+  #   attribute :review_rating
+  #   attribute :review_count
+  #   attribute :brand
+  #   attribute :product_code
+  #   attribute :availability
+  #   attribute :quantity_available
+  #   attribute :description
+  #   attribute :user_id
+  #   attribute :image
+  #   attribute :stripe_item_id
+  #   attribute :currency
+  #   attribute :stripe_price_id
 
+  #   attribute :created_at do
+  #     created_at.to_i
+  #   end
 
-  meilisearch per_environment: true do
-    attribute :title
-    attribute :price
-    attribute :review_rating
-    attribute :review_count
-    attribute :brand
-    attribute :product_code
-    attribute :availability
-    attribute :quantity_available
-    attribute :description
-    attribute :user_id
-    attribute :image
-    attribute :stripe_item_id
-    attribute :currency
-    attribute :stripe_price_id
-
-    attribute :created_at do
-      created_at.to_i
-    end
-
-    filterable_attributes [ :brand ]
-    sortable_attributes [:updated_at, :created_at ]
-  end
+  #   filterable_attributes [ :brand ]
+  #   sortable_attributes [:updated_at, :created_at ]
+  # end
 
   def not_referenced_by_any_line_item
     unless line_items.empty?

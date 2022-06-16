@@ -29,7 +29,8 @@ gem 'pagy'
 # mail form on landingpage
 gem 'mail_form'
 # search function
-gem 'meilisearch-rails'
+# meilisearch does not work on free tier of heroku
+# gem 'meilisearch-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
