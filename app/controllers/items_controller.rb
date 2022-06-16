@@ -4,10 +4,10 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    # @pagy, @items =pagy(Item.all)
-    # @items = Item.search(params[:query])
-    @items = Item.pagy_search(params[:query])
-    @pagy, @items= pagy_meilisearch(@items, items: 10)
+    @pagy, @items =pagy(Item.all)
+    # below is to use with meilisearch - which doesn't work in production on heroku
+    # @items = Item.pagy_search(params[:query])
+    # @pagy, @items= pagy_meilisearch(@items, items: 10)
 
     # @items = Item.all.order("created_at desc")
   end

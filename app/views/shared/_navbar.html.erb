@@ -5,14 +5,17 @@
       <a href="https://sesmarketplace.herokuapp.com">
         <img alt="SES-Marketplace" src="https://res.cloudinary.com/weigheasy/image/upload/v1646456078/SES_logo_tfgflv.png" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
       </a>
-      <% if current_page?(items_path) %>
+      <!-- below lines are for meilisearch - which doesn't work in production on heroku -->
+      <!--
+      </% if current_page?(items_path) %>
         <form class="d-flex">
-          <%= form_with url: items_path, method: :get do |form| %>
-            <%= form.search_field :query, class: "form-control me-2", type: "search", placeholder: "Search" %>
-            <%= form.button "Search", class: "btn btn-outline-success", type: "submit" %>
-          <% end %>
+          </%= form_with url: items_path, method: :get do |form| %>
+            </%= form.search_field :query, class: "form-control me-2", type: "search", placeholder: "Search" %>
+            </%= form.button "Search", class: "btn btn-outline-success", type: "submit" %>
+          </% end %>
         </form>
-      <% end %>
+      </% end %> -->
+
           <ul>
             <% if total_cart_items %>
               <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
