@@ -15,7 +15,7 @@ user = User.new(
   password_confirmation: "123456"
 )
 puts "User created"
-user.save!
+# user.save!
 
 # user = User.new(
 #   first_name: "Bob",
