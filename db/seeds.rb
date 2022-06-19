@@ -10,12 +10,12 @@ puts "You're in the seeding file"
 user = User.new(
   first_name: "Nicola",
   last_name: "Bond",
-  email: "nicola@bond.com",
+  email: "nic@bond.com",
   password: "123456",
   password_confirmation: "123456"
 )
 puts "User created"
-# user.save!
+user.save!
 
 # user = User.new(
 #   first_name: "Bob",
