@@ -1,5 +1,11 @@
-<h2 class="section-title pt-3">Browse by Items</h2>
-<div class="media-scroller snaps-inline">
+<div class="underlined-header col-sm-12 pt-5 container">
+  <h4><span>Jewelery you'll love</span> made with passion</h4>
+  <p class="text-muted">
+    Custom and unique pieces made in Florida
+ <!--  Let us take the stress away and ensure you're time on your yacht is just for fun -->
+</p>
+</div>
+<div class="media-scroller snaps-inline mx-5">
   <%= link_to items_path do %>
     <div class="media-element">
         <img src="https://res.cloudinary.com/dk6tfvphu/image/upload/v1655746172/jackie-tsang-3_YP8_mh-Kg-unsplash_luuqq7.jpg" alt="tools">
@@ -45,3 +51,78 @@
     </div>
   <% end %>
 </div>
+<style>
+  .underlined-header h4 {
+    position: relative;
+    padding:0;
+    color:#007cc7;
+    line-height: 1;
+    letter-spacing:0.3px;
+    font-size: 34px;
+    font-weight: 700;
+    text-align:center;
+    text-transform:none;
+    margin-bottom:30px;
+  }
+
+  .underlined-header h4:before {
+    content: '';
+    width: 260px;
+    height: 3px;
+    background: #007cc7;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    right:0;
+    margin:0 auto;
+  }
+  .underlined-header h4 span {
+    font-weight: 700;
+    padding-bottom: 5px;
+    color:#2f2f2f;
+  }
+
+  .underlined-header p {
+      color:#818181;
+      font-size:16px;
+      line-height:28px;
+      text-align:center;
+    }
+
+  .small-underlined-header h4 {
+    position: relative;
+    padding:0;
+    color:#007cc7;
+    line-height: 1;
+    letter-spacing:0.3px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align:center;
+    text-transform:none;
+    margin-bottom:30px;
+  }
+
+  .small-underlined-header h4:before {
+    content: '';
+    width: 100px;
+    height: 3px;
+    background: #007cc7;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    right:0;
+    margin:0 auto;
+  }
+  .small-underlined-header h4 span {
+    font-weight: 700;
+    padding-bottom: 5px;
+    color:#2f2f2f;
+  }
+
+  .small-underlined-header p {
+    // color:#818181;
+    font-size:34px;
+    line-height:28px;
+    text-align:center;
+  }
+</style>

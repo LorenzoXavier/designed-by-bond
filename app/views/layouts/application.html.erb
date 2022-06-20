@@ -18,15 +18,17 @@
 
     <% if current_page?(root_path) %>
     <%= render "shared/banner_homepage" %>
-      <div class="container">
-        <%= yield %>
-      </div>
+
+    <%= yield %>
+
     <% else %>
       <div class="container">
         <%= yield %>
       </div>
     <% end %>
+
     <%= render "shared/contact_form" if current_page?(root_path) %>
+    <%= render "shared/testomonials" if current_page?(root_path) %>
     <%= render "shared/footer" %>
   </body>
 </html>

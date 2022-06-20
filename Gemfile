@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+# recaptcha for i'm not a robot authentication
+gem 'recaptcha'
+
 # for seeding fake data
 gem 'faker'
 
