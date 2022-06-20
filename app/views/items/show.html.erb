@@ -1,11 +1,17 @@
 <% content_for :body_class, 'bg-grey' %>
 <div class="show_page">
   <section class="section item-show">
-    <div class="columns">
-      <div class="column is-8">
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
         <h1 class="title is-2"><%= @item.title %></h1>
-        <div class="row ps-5"><div class="col-2">Product code:</div><div class="col-2"><%= @item.product_code %></div></div>
-        <div class="row ps-5"><div class="col-2">Reviews: </div><div class="col-2"><%= @item.review_count %></div></div>
+        <div class="row ps-5">
+          <div class="col-2">Product code:</div>
+          <div class="col-2"><%= @item.product_code %></div>
+        </div>
+        <div class="row ps-5">
+          <div class="col-2">Reviews: </div>
+          <div class="col-2"><%= @item.review_count %></div>
+        </div>
         <div class="row ps-5 pb-5">
           <div class="col-2">Review Rating:</div>
           <div class="col-2">
@@ -28,46 +34,46 @@
             document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
           }
         </script>
-        <div class="feature-image">
+        <div class="feature-image" style="widows: 100%;">
           <%= image_tag(@item.image_url(:default)) %>
         </div>
         <div class="content pa4 mt3 bg-white border-radius-3">
-        <h3 class="subtitle is-4">Description</h3>
-        <%= @item.description %>
-        <h3 class="subtitle is-4 pt5">Product Specs</h3>
-        <table class="table is-narrow">
-          <% if @item.product_code %>
-          <tr>
-            <td class="has-text-weight-bold">Product code:</td>
-            <td><%= @item.product_code %></td>
-          </tr>
-          <% end %>
-          <% if @item.availability %>
+          <h3 class="subtitle is-4">Description</h3>
+          <%= @item.description %>
+          <h3 class="subtitle is-4 pt5">Product Specs</h3>
+          <table class="table is-narrow">
+            <% if @item.product_code %>
             <tr>
-              <td class="has-text-weight-bold">Availability:</td>
-              <td><%= product_availability(@item) %></td>
+              <td class="has-text-weight-bold">Product code:</td>
+              <td><%= @item.product_code %></td>
             </tr>
-          <% end %>
-          <% if @item.availability != "0" %>
+            <% end %>
+            <% if @item.availability %>
+              <tr>
+                <td class="has-text-weight-bold">Availability:</td>
+                <td><%= product_availability(@item) %></td>
+              </tr>
+            <% end %>
+            <% if @item.availability != "0" %>
+              <tr>
+                <td class="has-text-weight-bold">Amount in stock:</td>
+                <td><%= @item.quantity_available %></td>
+              </tr>
+            <% end %>
+            <% if @item.price %>
+              <tr>
+                <td class="has-text-weight-bold">Price:</td>
+                <td><%= number_to_currency(@item.price) %></td>
+              </tr>
+            <% end %>
             <tr>
-              <td class="has-text-weight-bold">Amount in stock:</td>
-              <td><%= @item.quantity_available %></td>
+              <td class="has-text-weight-bold">Brand:</td>
+              <td><%= @item.brand %></td>
             </tr>
-          <% end %>
-          <% if @item.price %>
-            <tr>
-              <td class="has-text-weight-bold">Price:</td>
-              <td><%= number_to_currency(@item.price) %></td>
-            </tr>
-          <% end %>
-          <tr>
-            <td class="has-text-weight-bold">Brand:</td>
-            <td><%= @item.brand %></td>
-          </tr>
-        </table>
+          </table>
+        </div>
       </div>
-      </div>
-      <div class="column is-3 is-offset-1">
+      <div class="col-md-12 col-lg-4 p-3">
         <div class="bg-white pa4 border-radius-3">
           <h4 class="title is-5 has-text-centered"><%= number_to_currency(@item.price) %></h4>
           <p class="has-text-centered mb4">Sold by <%= @item.user.first_name %> <%= @item.user.last_name %></p>
@@ -81,10 +87,5 @@
         </div>
       </div>
     </div>
-    <% if allowed_to_edit(@item) %>
-      <%= link_to 'Edit', edit_item_path(@item), class: 'button' %>
-    <% end %>
   </section>
 </div>
-
-
