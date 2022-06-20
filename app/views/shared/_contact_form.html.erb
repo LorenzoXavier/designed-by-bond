@@ -24,10 +24,10 @@
                      <div class="form-group col-lg-12 col-sm-12 co-xs-12">
                       <%= f.text_area :message, class: "form-control", placeholder: "Write message in here...", required: "true" %>
                      </div>
-                     <!-- <div class="field mb-3">
-                       </%= flash[:recaptcha_error] %>
-                       </%= recaptcha_tags %>
-                     </div> -->
+                     <div class="field mb-3">
+                       <%= flash[:recaptcha_error] %>
+                       <%= recaptcha_tags %>
+                     </div>
                      <div class="form-group col-lg-12 col-sm-12 co-xs-12">
                       <%= f.submit "Submit", class: "theme-btn btn-style-one" %>
                      </div>
@@ -43,9 +43,9 @@
           <h2 class="pb-1">Contact Info</h2>
             <ul class="list-info">
               <i class="fa fa-globe text-center" style="color:#24388d;font-size:30px;"></i>
-              <li>Ruby on Rails Developer</li>
+              <li>Designed by Bond</li>
               <i class="fa fa-envelope text-center" style="color:#24388d;font-size:30px;"></i>
-              <li>weigheasy2022@gmail.com</li>
+              <li>designed.by.bond@gmail.com</li>
               <li></li>
               <i class="fa fa-phone text-center pb-2" style="color:#24388d;font-size:30px;"></i><br>
               <a style="color:#24388d;font-size:18px;" href="tel:00447590745745" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+44 7590 745 745</p></a>

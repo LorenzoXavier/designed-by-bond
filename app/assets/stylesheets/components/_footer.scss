@@ -86,7 +86,7 @@
 {
   .site-footer [class^=col-]
   {
-    margin-bottom:30px
+    // margin-bottom:30px
   }
 }
 @media (max-width:767px)
@@ -174,8 +174,11 @@
 
 @media screen and (max-width: 992px) {
   .footer-links li {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    a {
+      font-size: 20px;
+    }
   }
   .site-footer {
     font-size: 22px;
@@ -184,14 +187,20 @@
       font-size: 22px;
     line-height: inherit;
     }
+    p {
+      font-size: 20px;
+    }
     .social-icons a {
-      width: 80px;
-      height: 80px;
-      font-size: 40px;
+      width: 60px;
+      height: 60px;
+      font-size: 22px;
     }
     .social-icons i {
       vertical-align: -webkit-baseline-middle;
     }
+  }
+  .footer-padding {
+    padding-bottom: 12px;
   }
 }
 

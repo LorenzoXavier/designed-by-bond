@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
-  # prepend_before_action :check_captcha, only: :create
+  prepend_before_action :check_captcha, only: :create
 
   def create
     @contact = Contact.new(contact_params)
@@ -9,7 +9,7 @@ class ContactController < ApplicationController
       # render json: {message: "Email sent successfully"}
     else
       redirect_to root_path
-      flash.alert = "Message unable to send, please email: weigheasy2022@gmail.com"
+      flash.alert = "Message unable to send, please email: designed.by.bond@gmail.com"
       # render json: @contact.errors
     end
   end
@@ -19,10 +19,10 @@ class ContactController < ApplicationController
     params.require(:contact).permit(:name, :email, :subject, :phone, :message)
   end
 
-  # def check_captcha
-  #   unless verify_recaptcha
-  #     redirect_to root_path
-  #     flash.alert = "Message unable to send, please email: weigheasy2022@gmail.com"
-  #   end
-  # end
+  def check_captcha
+    unless verify_recaptcha
+      redirect_to root_path
+      flash.alert = "Message unable to send, please email: designed.by.bond@gmail.com"
+    end
+  end
 end
