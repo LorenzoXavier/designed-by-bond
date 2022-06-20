@@ -13,9 +13,14 @@ Rails.application.routes.draw do
     registrations: "registrations"
   }
   root 'items#index'
-  get '/checkout', to: 'checkouts#show'
   get '/billing', to: 'billing#show'
   resources :contact, only: [:create]
+
+  get '/checkout', to: 'checkouts#show'
+  scope '/checkout' do
+    get 'cancel', to: 'checkouts#cancel', as: 'checkout_cancel'
+    get 'success', to: 'checkouts#success', as: 'checkout_success'
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

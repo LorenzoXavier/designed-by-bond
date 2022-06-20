@@ -1,0 +1,15 @@
+<div class="container pt-3 pb-3">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 col-md-6 text-center"  style="position: relative;" >
+      <div style="position: absolute; top: 30%">
+        <h3>You cancelled the purchase, click below to re attempt</h3>
+
+        <%= render "pay/stripe/checkout_button", session: @checkout_session, title: "Try again", class: "button is-danger" %>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 text-center" >
+      <img src="https://res.cloudinary.com/weigheasy/image/upload/v1644618414/wrong_m9iccr.svg" alt="Cancelled" style="max-height: 300px;">
+    </div>
+  </div>
+</div>

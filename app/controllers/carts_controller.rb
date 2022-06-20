@@ -17,6 +17,8 @@ class CartsController < ApplicationController
     @checkout_session = current_user.payment_processor.checkout(
       mode: "payment",
       line_items: @cart.line_items.collect { |item| item.to_builder.attributes! },
+      success_url: checkout_success_url,
+      cancel_url: checkout_cancel_url
     )
   end
 
