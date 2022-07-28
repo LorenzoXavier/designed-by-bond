@@ -1,18 +1,26 @@
-# Ruby on rails e-commerse site with devise, stripe and AWS
+# Designed by bond mock-up Jewlery marketplace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live verion on heroku - please be patient on loading times - it's hoseted on the free tier](https://designed-by-bond.herokuapp.com)
 
-Things you may want to cover:
+AN E-COMMERSE SITE BUILT WITH RUBY ON RAILS 
+A web application for purchasing and selling Jewelery. 
+The app uses: 
+*Devise to handle users
+*Stripe for payments 
+*AWS for image storage when creating items 
+*recaptcha for the contact form - using a generic Gmail account to handle the email
 
-* Ruby version
+
+* Rails version 6.0.5
+* Ruby version 3.0.0
 
 * System dependencies
 
 * Configuration
 * Payment
 
-Using Stripe as the payment portal. I have used the PAY gem to create the billing and checkout portal on Stripe Checkout.
+Using Stripe as the payment portal. 
+I have used the PAY gem to create the billing and checkout portal on Stripe Checkout.
 https://github.com/pay-rails/pay
 
 
