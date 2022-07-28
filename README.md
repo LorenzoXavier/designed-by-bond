@@ -1,10 +1,11 @@
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 # Designed by bond mock-up Jewlery marketplace
 AN E-COMMERSE SITE BUILT WITH RUBY ON RAILS 
 A web application for purchasing and selling Jewelery. 
 
 [Live verion on heroku - please be patient on loading times - it's hoseted on the free tier](https://designed-by-bond.herokuapp.com)
 
-**The app uses: 
+** The app uses: 
 * Devise to handle users
 * Stripe for payments 
 * AWS for image storage when creating items 
@@ -12,7 +13,7 @@ A web application for purchasing and selling Jewelery.
 * Rails version 6.0.5
 * Ruby version 3.0.0
 
-**Setup
+** Setup
 
 
 * Configuration
