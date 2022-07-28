@@ -56,10 +56,13 @@ recaptcha_secret_key:
 ```
 
 [To set up and obtain stripe credentials - tap here (https://stripe.com)
+
 [For the AWS setup - click here](https://aws.amazon.com/)
+
 [Recaptcha setup up link - click here](https://developers.google.com/recaptcha)
 
 For the gmail account - you must ensure you follow their protocol to allow the application to use GMAIL as a mail server.
+
 [gmail link here](mail.google.com)
 
 
