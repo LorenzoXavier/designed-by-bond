@@ -1,5 +1,6 @@
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-# Designed by bond mock-up Jewlery marketplace
+[logo]: https://github.com/LorenzoXavier/designed-by-bond/blob/8fd46078a9c8e86d5f46aa0002dfa756a36ac58f/app/assets/images/favicon.ico "Logo"
+
+# Designed by bond mock-up Jewlery marketplace ![alt text][logo]
 AN E-COMMERSE SITE BUILT WITH RUBY ON RAILS 
 A web application for purchasing and selling Jewelery. 
 
