@@ -26,7 +26,7 @@ Then you must run:
 ``$ bundle install``
 
 To create the database, migrate and seed:
-``$ rails db:create && rails db:migrate && rails db:seed``
+``$ rails db:create && rails db:migrate``
 
 In order for the application to work, you must create a ``credentials.yml`` file and open in your text editor of choice.
 
@@ -55,7 +55,7 @@ recaptcha_site_key:
 recaptcha_secret_key: 
 ```
 
-[To set up and obtain stripe credentials - tap here (https://stripe.com)
+[To set up and obtain stripe credentials - tap here](https://stripe.com)
 
 [For the AWS setup - click here](https://aws.amazon.com/)
 
@@ -63,14 +63,22 @@ recaptcha_secret_key:
 
 For the gmail account - you must ensure you follow their protocol to allow the application to use GMAIL as a mail server.
 
-[gmail link here](mail.google.com)
+[Gmail link here](mail.google.com)
 
+## Stipe
 
-
-* Configuration
-* Payment
-
-Using Stripe as the payment portal. 
-I have used the PAY gem to create the billing and checkout portal on Stripe Checkout.
+I have used the PAY gem to create the billing and checkout portal on Stripe Checkout. Please read the following documentation:
 https://github.com/pay-rails/pay
+
+## Seed file
+
+There is a seed file that will generate 5 users/sellers and 12 items. 
+
+The Image is generated from a static file - so will be the same for every item. 
+
+When you add a new item when you're signed into the app - you can choose whatever image you like.
+
+To run the seed file:
+``$ rails db:seed``
+
 
