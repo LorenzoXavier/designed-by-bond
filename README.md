@@ -18,14 +18,14 @@ A web application for purchasing and selling Jewelery.
 
 
 ## Setup
-To clone localy and make changes:
+To clone localy and make changes:</br>
 
 ``$ git clone https://github.com/LorenzoXavier/designed-by-bond.git``
 
-Then you must run:
+Then you must run:</br>
 ``$ bundle install``
 
-To create the database, migrate and seed:
+To create the database, migrate and seed:</br>
 ``$ rails db:create && rails db:migrate``
 
 In order for the application to work, you must create a ``credentials.yml`` file and open in your text editor of choice.
