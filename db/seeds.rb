@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "You're in the seeding file"
 
-user = User.new(
-  first_name: "Nicola",
-  last_name: "Bond",
-  email: "nic@bond.com",
-  password: "123456",
-  password_confirmation: "123456"
-)
-puts "User created"
-user.save!
+# user = User.new(
+#   first_name: "Nicola",
+#   last_name: "Bond",
+#   email: "nic@bond.com",
+#   password: "123456",
+#   password_confirmation: "123456"
+# )
+# puts "User created"
+# user.save!
 
 # user = User.new(
 #   first_name: "Bob",
@@ -73,7 +73,7 @@ user.save!
 #   puts "creating item number #{i + 1}"
 # end
 
-2.times do |i|
+4.times do |i|
   Item.create!([{
     title: Faker::Lorem.sentence(word_count: 2),
     price: Random.rand(3...100),
