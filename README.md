@@ -20,13 +20,13 @@ A web application for purchasing and selling Jewelery.
 ## Setup
 To clone localy and make changes:
 
-``$ git clone https://github.com/LorenzoXavier/designed-by-bond.git``
+```$ git clone https://github.com/LorenzoXavier/designed-by-bond.git```
 
 Then you must run:
-``$ bundle install``
+```$ bundle install```
 
 To create the database, migrate and seed:
-``$ rails db:create && rails db:migrate``
+```$ rails db:create && rails db:migrate```
 
 In order for the application to work, you must create a ``credentials.yml`` file and open in your text editor of choice.
 
@@ -79,6 +79,6 @@ The Image is generated from a static file - so will be the same for every item.
 When you add a new item when you're signed into the app - you can choose whatever image you like.
 
 To run the seed file:
-``$ rails db:seed``
+```$ rails db:seed```
 
 
