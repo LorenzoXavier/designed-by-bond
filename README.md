@@ -5,10 +5,10 @@
 AN E-COMMERSE SITE BUILT WITH RUBY ON RAILS 
 A web application for purchasing and selling Jewelery. 
 The app uses: 
-*Devise to handle users
-*Stripe for payments 
-*AWS for image storage when creating items 
-*recaptcha for the contact form - using a generic Gmail account to handle the email
+* Devise to handle users
+* Stripe for payments 
+* AWS for image storage when creating items 
+* Recaptcha for the contact form - using a generic Gmail account to handle the email
 
 
 * Rails version 6.0.5
