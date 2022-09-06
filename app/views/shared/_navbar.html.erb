@@ -27,8 +27,6 @@
               <% end %>
             <% end %>
             <% unless user_signed_in? %>
-              <li>Hi</li>
-              <li>hi again</li>
               <li><%= link_to "Login", new_user_session_path%></li>
               <li><%= link_to "Sign Up", new_user_registration_path%></li>
               <% else %>
